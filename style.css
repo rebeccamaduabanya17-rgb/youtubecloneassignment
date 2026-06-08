@@ -223,9 +223,12 @@ RESPONSIVE FIXES
 /* =========================
 DARK MODE
 ========================= */
+/* =========================
+DARK MODE
+========================= */
 .dark-mode {
     background: #0f0f0f;
-    color: white;
+    color: #fff;
 }
 
 .dark-mode .navbar {
@@ -235,3 +238,43 @@ DARK MODE
 .dark-mode .videos {
     background: #181818;
 }
+
+/* SIDEBAR FIX (IMPORTANT) */
+.dark-mode .categories {
+    background: #181818;
+}
+
+/* FORCE ALL SIDEBAR TEXT TO BE WHITE */
+.dark-mode .category,
+.dark-mode .category i,
+.dark-mode .category span,
+.dark-mode .category-section,
+.dark-mode .categories-footer {
+    color: #fff ; /* 👈 force white text in sidebar */
+}
+
+/* HOVER FIX */
+.dark-mode .category:hover {
+    background: #272727;
+}
+
+/* ACTIVE FIX */
+.dark-mode .active {
+    background: #383838;
+}
+
+/* ICON FIX */
+.dark-mode .material-icons {
+    color: #fff;
+}
+
+/* SEARCH FIX */
+.dark-mode .search input {
+    background: transparent;
+    color: #fff;
+}
+
+.dark-mode .search button {
+    background: #181818;
+}
+
