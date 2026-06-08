@@ -81,6 +81,13 @@ NAVBAR
 /* =========================
 MAIN LAYOUT FIX (IMPORTANT)
 ========================= */
+body,
+.navbar,
+.categories,
+.videos {
+    transition: background-color 0.3s ease,
+                color 0.3s ease;
+}
 .mainbody {
     height: calc(100vh - 56px); /* full viewport height minus navbar */
     display: flex;
