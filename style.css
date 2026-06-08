@@ -82,7 +82,7 @@ NAVBAR
 MAIN LAYOUT FIX (IMPORTANT)
 ========================= */
 .mainbody {
-    height: calc(100vh - 56px);
+    height: calc(100vh - 56px); /* full viewport height minus navbar */
     display: flex;
     overflow: hidden;
 }
@@ -90,7 +90,7 @@ MAIN LAYOUT FIX (IMPORTANT)
 /* =========================
 SIDEBAR
 ========================= */
-.categories {
+.categories { 
     width: 240px;
     height: 100%;
     background: white;
