@@ -13,6 +13,37 @@ body {
 }
 
 /* =========================
+RESPONSIVE CURSOR STYLES
+========================= */
+/* Default smooth cursor behavior */
+* {
+    will-change: cursor;
+}
+
+/* Pointer cursor for interactive elements */
+button, 
+a, 
+input[type="submit"],
+.category,
+.video,
+.material-icons {
+    cursor: pointer;
+    transition: cursor 0.1s ease;
+}
+
+/* Text selection cursor */
+input[type="text"], 
+textarea {
+    cursor: text;
+}
+
+/* Default cursor for non-interactive text */
+p, 
+span {
+    cursor: default;
+}
+
+/* =========================
 NAVBAR
 ========================= */
 .navbar {
@@ -35,6 +66,12 @@ NAVBAR
 .logo img {
     width: 100px;
     margin-left: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
 }
 
 /* search */
@@ -51,6 +88,12 @@ NAVBAR
     height: 32px;
     border-radius: 25px; /* 👈 whole bar rounded */
     overflow: hidden;    /* 👈 IMPORTANT: keeps clean edges */
+    transition: all 0.2s ease;
+}
+
+.search:focus-within {
+    border-color: #065fd4;
+    box-shadow: 0 0 0 3px rgba(6, 95, 212, 0.1);
 }
 
 .search input {
@@ -65,17 +108,59 @@ NAVBAR
     border-left: 1px solid #cccccc;
     width: 10%;
     background: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.search button:hover {
+    background: #f0f0f0;
+}
+
+.search button:active {
+    background: #e0e0e0;
 }
 
 /* icons */
 .material-icons {
     color: #606060;
     margin-right: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
+
+.material-icons:hover {
+    color: #000;
+}
+
 .navigation-icons i, /* voice + profile icons */
 .navbar .logo i,
 .searchbar i {
     cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.navigation-icons i:hover,
+.navbar .logo i:hover,
+.searchbar i:hover {
+    transform: scale(1.1);
+    color: #000;
+}
+
+/* Theme button */
+#theme-btn {
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+#theme-btn:hover {
+    transform: rotate(20deg) scale(1.1);
+}
+
+#theme-btn:active {
+    transform: rotate(20deg) scale(0.95);
 }
 
 /* =========================
@@ -118,10 +203,16 @@ SIDEBAR
     padding: 0 24px;
     font-size: 14px;
     cursor: pointer;
+    transition: all 0.15s ease;
 }
 
 .category:hover {
     background: #f9f9f9;
+    transform: translateX(4px);
+}
+
+.category:active {
+    transform: translateX(2px);
 }
 
 .active {
@@ -161,6 +252,18 @@ VIDEO SECTION FIX (THIS FIXES YOUR PROBLEM)
 /* video card */
 .video {
     cursor: pointer;
+    transition: all 0.2s ease;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.video:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+}
+
+.video:active {
+    transform: scale(0.98);
 }
 
 /* thumbnail */
@@ -169,6 +272,12 @@ VIDEO SECTION FIX (THIS FIXES YOUR PROBLEM)
     height: 180px;
     object-fit: cover;
     border-radius: 10px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.video:hover .thumbnail img {
+    transform: scale(1.05);
 }
 
 /* details */
@@ -182,16 +291,34 @@ VIDEO SECTION FIX (THIS FIXES YOUR PROBLEM)
     width: 36px;
     height: 36px;
     margin-right: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.video .profile img:hover {
+    transform: scale(1.1);
 }
 
 .video .video-details p {
     font-size: 14px;
     font-weight: 500;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.video .video-details p:hover {
+    color: #065fd4;
 }
 
 .video .posted-by {
     font-size: 13px;
     color: #606060;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.video .posted-by:hover {
+    color: #000;
 }
 
 /* =========================
@@ -285,3 +412,23 @@ DARK MODE
     background: #181818;
 }
 
+.dark-mode .search:focus-within {
+    border-color: #3ea6ff;
+    box-shadow: 0 0 0 3px rgba(62, 166, 255, 0.1);
+}
+
+.dark-mode .search button {
+    border-left-color: #333;
+}
+
+.dark-mode .search button:hover {
+    background: #272727;
+}
+
+.dark-mode .video .video-details p:hover {
+    color: #3ea6ff;
+}
+
+.dark-mode .video .posted-by:hover {
+    color: #aaa;
+}
